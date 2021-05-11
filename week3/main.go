@@ -38,7 +38,7 @@ func main() {
 			return &SignalError{ErrorString: v.String()}
 		case <-ctx.Done():
 			fmt.Println("signal done")
-			return nil
+			return ctx.Err()
 		}
 	})
 
